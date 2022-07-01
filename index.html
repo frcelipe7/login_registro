@@ -7,13 +7,14 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="content">
         <div class="block">
             <div class="login form">
-                <h1>Login</h1>
                 <form>
+                    <h1 id="title_login">Login</h1>
                     <div class="line">
                         <input type="email" id="email_login" placeholder=" " autocomplete="email">
                         <label for="email_login">Email</label>
@@ -26,7 +27,7 @@
                         <button class="login_button">Entrar</button>
                         <div class="chamar_register">
                             Ainda não possui uma conta?<br>
-                            <span class="crie">Crie uma aqui!</span>
+                            <span id="call_register" class="crie">Crie uma aqui!</span>
                         </div>
                     </div>
                 </form>
