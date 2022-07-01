@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
 
 * {
     padding: 0%; margin: 0%;
@@ -22,77 +22,95 @@
     overflow: hidden;
 }
 
-.block .form {
+.block .login.form,
+.block .registrar.form {
     width: 50%; height: 100%;
     padding: 20px;
     overflow: hidden;
 }
 
-.block .form form {
+.block .registrar.form {
+    position: absolute;
+    top: 0px;
+}
+
+.block .login.form form,
+.block .registrar.form form {
     position: relative;
     height: 460px; width: 100%;
     overflow: hidden;
     padding-top: 90px;
 }
 
-.block .form h1 {
-    font-weight: 500;
+.block .login.form h1,
+.block .registrar.form h1 {
+    font-weight: 600;
     color: #F2F2F2;
     margin-bottom: 30px;
     transition: 1s;
     position: absolute;
     top: 0px;
+    font-size: 30pt;
 }
 
-.block .line {
+.block .login .line,
+.block .registrar .line {
     margin-top: 20px;
     position: relative;
 }
 
-.block .line label {
+.block .login .line label,
+.block .registrar .line label {
     position: absolute;
     top: 2px; left: 5px;
     transition: .4s;
     color: #380300;
+    cursor: text;
 }
 
-.block .line input {
+.block .login .line input,
+.block .registrar .line input {
     width: 100%; height: 30px;
     border-radius: 3px;
     border: none;
     outline: none; padding: 5px;
 }
 
-.block .line input:focus ~ label {
+.block .login .line input:focus ~ label,
+.block .registrar .line input:focus ~ label {
     top: -17px; font-size: 10pt; 
     color: #ffffff; left: 0px;
 }
 
-.block .line input:not(:placeholder-shown) ~ label {
+.block .login .line input:not(:placeholder-shown) ~ label,
+.block .registrar .line input:not(:placeholder-shown) ~ label {
     top: -17px; font-size: 10pt; 
     color: #ffffff; left: 0px;
 }
 
-form .buttons {
+.login form .buttons,
+.registrar form .buttons {
     position: absolute; bottom: 0px;
     height: 100px; width: 100%;
     transition: .5s;
 }
 
-form .buttons button {
+.login form .buttons button,
+.registrar form .buttons button {
     background-color: #11A8A0;
     border: none; border-radius: 5px;
     width: 100%; font-size: 12pt;
     color: #f2f2f2; cursor: pointer;
     margin-bottom: 25px;
-    
 }
 
-form .buttons .chamar_register {
+.login form .buttons .chamar_register,
+.registrar form .buttons .chamar_login {
     color: #f2f2f2db;
 }
 
-form .buttons span.crie {
+.login form .buttons span.crie,
+.registrar form .buttons span {
     width: auto; height: auto;
     font-size: 12pt;
     color: #fff;
@@ -106,19 +124,34 @@ form .buttons span.crie {
     top: 0; right: 0; left: auto;
     position: absolute;
     margin: 5px; border-radius: 5px;
-    transition: 1s;
+    transition: 2s; position: absolute;
+    z-index: 100;
 }
 
-.registrar, .to_register {display: none;}
+.registrar {
+    margin-left: 50%;
+    display: none; opacity: 0;
+}
 
 @keyframes changeLogin {
     0% {left: 0%;}
     100% {left: -120%;}
 }
 
+@keyframes changeLogin2 {
+    0% {left: -120%;}
+    100% {left: 0%;}
+}
+
+
 @keyframes opacityZero {
     0% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+@keyframes opacityOne {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 @keyframes slideToLeft {
