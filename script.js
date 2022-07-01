@@ -5,11 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const to_login_buttons = document.querySelector(".login form .to_login");
 
     const say_hello = document.querySelector(".say_hello");
+    const primeiro_svg = document.getElementById("primeiro_svg_register");
+    const segundo_svg = document.getElementById("segundo_svg_register");
     
     const block_registrar = document.querySelector(".block .registrar");
     const call_login = document.querySelector(".registrar form .to_register span")
 
+    const all_inputs = document.querySelectorAll('input');
     call_register.addEventListener("click", () => {
+        all_inputs.forEach(input => {
+            input.value = '';
+        })
+
+        primeiro_svg.style.animation = "opacityZero 2s forwards"
+        segundo_svg.style.animation = "opacityOne 2s forwards"
+
         line_form.forEach(line => {
             line.style.animation = "changeLogin .5s forwards";
         });
@@ -23,6 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     call_login.addEventListener("click", () => {
+        all_inputs.forEach(input => {
+            input.value = '';
+        })
+
+        primeiro_svg.style.animation = "opacityOne 2s forwards"
+        segundo_svg.style.animation = "opacityZero 2s forwards"
+
         line_form.forEach(line => {
             line.style.animation = "changeLogin2 1s forwards";
         });
